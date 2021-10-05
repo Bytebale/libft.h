@@ -6,35 +6,39 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 02:19:12 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 03:30:14 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/05 17:31:52 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	dstlen;
-	size_t	srclen;
+	int		i;
+	size_t	s;
 
-	dstlen = ft_strlen(dst);
-	srclen = ft_strlen(src);
-	while (dstsize != 0)
+	s = ft_strlen((char *) src);
+	i = 0;
+	while (i < dstsize - 1)
 	{
-		dstlen = srclen;
-		dstsize--;
+		dst[i] = src[i];
+		i++;
 	}
-	return (dstlen - 1);
+	dst[i] = 0;
+	return (s);
 }
 // #include <stdio.h>
+// #include <string.h>
+// int	main()
+// {
+// 	char	dest[5];
+// 	const char	*src = "go hard";
 
-// // int	main()
-// // {
-// // 	char	dest[] = "go hard";
-// // 	char	src[] = "make ";
-
-// // 	printf ("%s\n", dest);
-// // 	printf ("%s\n", src);
-// // 	printf ("%zu\n",ft_strlcpy(dest, src, 3));
-// // 	return (0);
-// // }
+// 	// printf ("%s\n", dest);
+// 	printf ("%s\n", src);
+// 	printf ("my: %zu\n",ft_strlcpy(dest, src, sizeof(dest)));
+// 	printf("my res: %s\n", dest);
+// 	printf ("orig: %zu\n", strlcpy (dest, src,sizeof(dest)));
+// 	printf("orig res: %s\n", dest);
+// 	return (0);
+// }

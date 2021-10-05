@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 01:12:01 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 01:22:43 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/05 16:19:13 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t len)
 	return (dest);
 }
 // #include <stdio.h>
+// #include <string.h>
 
 // int	main()
 // {
 // 	char	dest[] = "go hard";
-// 	const char	src[] = "make easily ";
+// 	const char	src[] = "maly ";
 
 // 	printf ("%s\n", dest);
 // 	printf ("%s\n", src);
 // 	printf ("%s\n",ft_memcpy(dest, src, sizeof(dest)));
+// 	printf ("%s\n", memcpy(dest, src, sizeof(dest)));
 // 	return (0);
 // }

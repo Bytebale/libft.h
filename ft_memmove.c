@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 01:58:41 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 02:17:38 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/05 16:21:01 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	return (dest);
 }
 // #include <stdio.h>
+// #include <string.h>
 
 // int	main()
 // {
 // 	char	dest[] = "go hard";
-// 	const char	src[] = "make ";
+// 	const char	src[] = "make it easy";
 
 // 	printf ("%s\n", dest);
 // 	printf ("%s\n", src);
 // 	printf ("%s\n",ft_memmove(dest, src, sizeof(dest)));
+// 	printf ("%s\n",memmove(dest, src, sizeof(dest)));
 // 	return (0);
 // }

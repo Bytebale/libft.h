@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 13:31:38 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 17:34:02 by lshonta          ###   ########.fr       */
+/*   Created: 2021/10/05 04:20:00 by lshonta           #+#    #+#             */
+/*   Updated: 2021/10/05 17:36:59 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
 // #include <stdio.h>
-// #include <string.h>
+// #include <ctype.h>
 
-// int	main()
+// int main ()
 // {
-// 	char	str[] = {"aasd"};
-// 	printf("my: %zu\n", ft_strlen(str));
-// 	printf("orig: %zu\n", strlen(str));
+// 	int c = (int) 'd';
+// 	printf("my: %c\n", (char) ft_toupper(c));
+// 	printf("orig: %c\n", (char) toupper(c));
 // 	return (0);
 // }
