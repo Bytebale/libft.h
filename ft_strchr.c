@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 04:20:00 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 17:45:48 by lshonta          ###   ########.fr       */
+/*   Created: 2021/10/05 19:42:06 by lshonta           #+#    #+#             */
+/*   Updated: 2021/10/05 19:52:43 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strchr(const char	*s, int	c)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	int	i;
+	int	k;
+	int	j;
+
+	i = ft_strlen((char *) s);
+	j = 0;
+	while (j < i)
+	{
+		if (s[j] == c)
+		{
+			k = j;
+			while (k < i)
+			{
+				return (&((char *) s)[k]);
+				k++;
+			}
+			return (0);
+		}
+		j++;
+	}
+	return (0);
 }
 // #include <stdio.h>
-// #include <ctype.h>
-
-// int main ()
+// #include <string.h>
+// int main()
 // {
-// 	int c = (int) 'd';
-// 	printf("my: %c\n", (char) ft_toupper(c));
-// 	printf("orig: %c\n", (char) toupper(c));
-// 	return (0);
+// char str[] = "DayDreamer";
+// char chr = 'D';
+// printf("orig: %s\n",strchr(str, chr));
+// printf("my: %s\n",ft_strchr(str, chr));
+// return 0;
 // }
