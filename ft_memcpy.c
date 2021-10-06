@@ -33,7 +33,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t len)
 
 // 	printf ("%s\n", dest);
 // 	printf ("%s\n", src);
-// 	printf ("%s\n",ft_memcpy(dest, src, sizeof(dest)));
-// 	printf ("%s\n", memcpy(dest, src, sizeof(dest)));
+// 	printf ("my: %s\n",ft_memcpy(dest, src, sizeof(dest)));
+// 	printf ("original: %s\n", memcpy(dest, src, sizeof(dest)));
 // 	return (0);
 // }

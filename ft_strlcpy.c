@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 02:19:12 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 17:31:52 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/06 14:57:51 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int		i;
-	size_t	s;
+	unsigned int	i;
+	size_t			s;
 
 	s = ft_strlen((char *) src);
 	i = 0;
