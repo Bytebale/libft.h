@@ -1,50 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 18:02:44 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/06 22:29:13 by lshonta          ###   ########.fr       */
+/*   Created: 2021/10/06 19:26:28 by lshonta           #+#    #+#             */
+/*   Updated: 2021/10/06 19:47:52 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_atoi(const char *str)
 {
+	int	res;
+	int	sign;
 	int	i;
-	int	k;
-	int	j;
 
-	i = ft_strlen((char *) s);
-	j = i - 1;
-	while (j >= 0)
+	res = 0;
+	sign = 1;
+	i = 0;
+	if (str[0] == '-')
 	{
-		if (s[j] == c)
-		{
-			k = j;
-			while (k < i)
-			{
-				return (&((char *) s)[k]);
-				k++;
-			}
-			return (0);
-		}
-		j--;
+		sign = -1;
+		i++;
 	}
-	if (c == '\0')
-		return ('\0');
+	if (str[0] == '+')
+		i++;
+	if (str[i] >= '0' && str[i] <= '9')
+	{
+		while (str[i] != '\0')
+		{
+			res = res * 10 + (str[i] - '0');
+			i++;
+		}
+		return (sign * res);
+	}
 	return (0);
 }
 // #include <stdio.h>
-// #include<string.h>
+
 // int main()
 // {
-// char str[] = "saymer";
-// char chr = 'y', *chpos;
-// printf("orig: %s\n",strrchr(str, chr));
-// printf("my: %s\n",ft_strrchr(str, chr));
-// return 0;
+// 	char str[] = "-123";
+// 	printf("my: %d\n", ft_atoi(str));
+// 	printf("orig: %d\n", atoi(str));
+// 	return (0);
 // }

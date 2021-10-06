@@ -1,50 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 18:02:44 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/06 22:29:13 by lshonta          ###   ########.fr       */
+/*   Created: 2021/10/06 17:19:57 by lshonta           #+#    #+#             */
+/*   Updated: 2021/10/06 17:35:22 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
-	int	k;
-	int	j;
+	size_t	i;
 
-	i = ft_strlen((char *) s);
-	j = i - 1;
-	while (j >= 0)
+	i = 0;
+	while (i < n)
 	{
-		if (s[j] == c)
-		{
-			k = j;
-			while (k < i)
-			{
-				return (&((char *) s)[k]);
-				k++;
-			}
-			return (0);
-		}
-		j--;
+		if (*((char *) s + i) == c)
+			return ((char *) s + i);
+		i++;
 	}
-	if (c == '\0')
-		return ('\0');
 	return (0);
 }
 // #include <stdio.h>
-// #include<string.h>
-// int main()
+// #include <string.h>
+
+// int	main()
 // {
-// char str[] = "saymer";
-// char chr = 'y', *chpos;
-// printf("orig: %s\n",strrchr(str, chr));
-// printf("my: %s\n",ft_strrchr(str, chr));
-// return 0;
+// 	char	s[] = "qwerty";
+
+// 	printf("my: %s\n", ft_memchr((void *)s, 'e', sizeof(s)));
+// 	printf("orig: %s\n", memchr((void *)s, 'e', sizeof(s)));
+// 	return (0);
 // }

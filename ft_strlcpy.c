@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 02:19:12 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/06 14:57:51 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/06 22:58:52 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	s = ft_strlen((char *) src);
 	i = 0;
+	if (dstsize == 0)
+		return (s);
 	while (i < dstsize - 1)
 	{
+		if (s > dstsize)
+			break ;
 		dst[i] = src[i];
 		i++;
 	}
@@ -31,14 +35,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 // #include <string.h>
 // int	main()
 // {
-// 	char	dest[5];
-// 	const char	*src = "go hard";
-
-// 	// printf ("%s\n", dest);
-// 	printf ("%s\n", src);
-// 	printf ("my: %zu\n",ft_strlcpy(dest, src, sizeof(dest)));
-// 	printf("my res: %s\n", dest);
-// 	printf ("orig: %zu\n", strlcpy (dest, src,sizeof(dest)));
-// 	printf("orig res: %s\n", dest);
+// 	char	dest[15] = "";
+// 	const char	src[] = "lorem";	
+// 	printf ("my: %zu\n",ft_strlcpy(dest, src, 15));
+// 	printf ("%s\n", dest);
+// 	printf ("orig: %zu\n", strlcpy (dest, src, 15));
+// 	printf ("%s\n", dest);
+// 	// printf ("%s\n", src);
 // 	return (0);
 // }

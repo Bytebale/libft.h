@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 00:42:46 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 20:17:48 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/06 22:19:47 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	*ft_memset(void *dest, int c, size_t len)
 		while (len--)
 			*tmp++ = c;
 	}
+	else
+		return (0);
 	return (dest);
 }
 // #include <stdio.h>

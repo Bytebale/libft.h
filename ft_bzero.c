@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 01:24:11 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 16:37:28 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/06 22:21:59 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_bzero(void *s, size_t n)
 {
 	register char	*t;
 
-	t = ft_memset(s, 0, n);
+	if (s != '\0' && n != '\0')
+		t = ft_memset(s, 0, n);
 	return (t);
 }
 // #include <stdio.h>

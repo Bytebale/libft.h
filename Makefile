@@ -6,30 +6,33 @@
 #    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/06 15:12:30 by lshonta          ###   ########.fr        #
+#    Updated: 2021/10/06 20:57:13 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := libft.a
-CC := gcc
-CFLAGS := -Wall -Werror -Wextra -c
-LFLAGS	= -Wall -Werror -Wextra -o
-SRC_FILES := ./*.c\
-OBJ_FILES = $(SRC_FILES:.c=.o)
-SRCS = $(SRC_FILES)
-OBJS = $(OBJ_FILES)
-RM := @rm -rf
+NAME := libft.a 
+LIST := ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	ft_isascii.c\
+        ft_isprint.c	ft_strlen.c	ft_memset.c	ft_bzero.c\
+		ft_memcpy.c	ft_memmove.c	ft_memset.c	ft_strchr.c\
+		ft_strlcat.c	ft_strlcpy.c	ft_strncmp.c	ft_strrchr.c\
+		ft_tolower.c	ft_toupper.c	ft_memchr.c	ft_memcmp.c\
+		ft_strnstr.c	ft_atoi.c
+FLAGS := -Wall -Werror -Wextra
+
+OBJ = $(patsubst %.c,%.o, $(LIST))
+FILES = $(patsubst %.c,%.d,$(LIST))
+RM := @rm -f
 
 all: $(NAME)
 
-$(OBJ_FILES)%.o: $(SRC_FILES)%.c
-	$(CC) $(CFLAGS) $< -o $@
+$(NAME) : $(OBJ)
+	 ar -rsc $(NAME) $?
 
-$(NAME): $(OBJS)
-	$(CC) $(LFLAGS) $(NAME) $(OBJS)
+%.o : %.c
+	gcc $(FLAGS) -c $<
 
 clean:
-	$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
