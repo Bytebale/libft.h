@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 19:42:06 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/07 16:49:34 by lshonta          ###   ########.fr       */
+/*   Created: 2021/10/11 16:28:15 by lshonta           #+#    #+#             */
+/*   Updated: 2021/10/11 16:34:58 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char	*s, int	c)
+char	*ft_strdup(const char *s1)
 {
-	int	i;
+	char	*tmp;
+	size_t	len;
 
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			return ((char *)(s + i));
-		}
-		i++;
-	}
-	if (s[i] == c)
-		return ((char *)(s + i));
-	return (0);
+	len = ft_strlen((char *) s1) + 1;
+	tmp = malloc(sizeof(char) * len);
+	if (!tmp)
+		return (NULL);
+	tmp = ft_memcpy(tmp, s1, len);
+	return (tmp);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-// char str[] = "";
-// char chr = '\0';
-// printf("orig: %s\n",strchr(str, chr));
-// printf("my: %s\n",ft_strchr(str, chr));
-// return 0;
-// }

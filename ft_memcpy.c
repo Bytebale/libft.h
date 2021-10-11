@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 01:12:01 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/06 22:25:40 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/07 16:37:52 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t len)
 	char		*tmp_dest;
 	const char	*tmp_src;
 
+	if (dest == src || len == 0)
+		return (dest);
+	if (!dest && !src)
+		return (0);
 	tmp_dest = (char *) dest;
 	tmp_src = (const char *) src;
-	if (*tmp_dest != '\0' && *tmp_src != '\0' && len != '\0')
-	{
-		while (len--)
-			*tmp_dest++ = *tmp_src++;
-		return (dest);
-	}
-	return (0);
+	while (len--)
+		*tmp_dest++ = *tmp_src++;
+	return (dest);
 }
 // #include <stdio.h>
 // #include <string.h>

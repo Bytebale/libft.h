@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:02:44 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/06 22:29:13 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/07 16:48:46 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,27 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	int	k;
-	int	j;
+	int		i;
+	char	*str;
 
-	i = ft_strlen((char *) s);
-	j = i - 1;
-	while (j >= 0)
+	i = 0;
+	str = 0;
+	while (s[i])
 	{
-		if (s[j] == c)
-		{
-			k = j;
-			while (k < i)
-			{
-				return (&((char *) s)[k]);
-				k++;
-			}
-			return (0);
-		}
-		j--;
+		if (s[i] == c)
+			str = (char *)(s + i);
+		i++;
 	}
-	if (c == '\0')
-		return ('\0');
-	return (0);
+	if (s[i] == c)
+		str = (char *)(s + i);
+	return (str);
 }
 // #include <stdio.h>
 // #include<string.h>
 // int main()
 // {
 // char str[] = "saymer";
-// char chr = 'y', *chpos;
+// char chr = 'y';
 // printf("orig: %s\n",strrchr(str, chr));
 // printf("my: %s\n",ft_strrchr(str, chr));
 // return 0;

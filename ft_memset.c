@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 00:42:46 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/06 22:19:47 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/07 17:24:24 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 void	*ft_memset(void *dest, int c, size_t len)
 {
-	char	*tmp;
+	size_t			i;
+	unsigned char	*tmp;
 
-	if (dest != NULL)
+	i = 0;
+	tmp = (unsigned char *) dest;
+	while (i < len)
 	{
-		tmp = (char *)dest;
-		while (len--)
-			*tmp++ = c;
+		tmp[i] = c;
+		i++;
 	}
-	else
-		return (0);
-	return (dest);
+	return (dest = tmp);
 }
 // #include <stdio.h>
 // #include <string.h>
 
 // int	main()
 // {
-// 	char	str[] = "go hard";
+// 	//char	str[] = {"asd"};
 
-// 	printf ("%s\n", str);
-// 	printf ("my: %s\n",ft_memset(str, '*', 3));
-// 	printf ("original: %s\n",memset(str, '*', 3));
+// 	printf ("my: %s\n",ft_memset(((void *) 0), 'a', 12));
+// //	printf ("original: %s\n",memset(str, '*', 1));
 // 	return (0);
 // }
