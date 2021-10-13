@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gribovvladimir <gribovvladimir@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 17:19:57 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/07 16:41:45 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:50:17 by gribovvladi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	str = (const char *) s;
+	if (c > 256)
+		c -= 256;
 	while (i < n)
 	{
 		if (str[i] == c)

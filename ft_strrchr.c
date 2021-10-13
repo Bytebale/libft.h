@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gribovvladimir <gribovvladimir@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:02:44 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/07 16:48:46 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:51:47 by gribovvladi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	str = 0;
+	if (c > 256)
+		c -= 256;
 	while (s[i])
 	{
 		if (s[i] == c)
