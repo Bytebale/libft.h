@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gribovvladimir <gribovvladimir@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 12:11:48 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/15 00:06:50 by gribovvladi      ###   ########.fr       */
+/*   Created: 2021/10/14 23:52:57 by gribovvladi       #+#    #+#             */
+/*   Updated: 2021/10/15 00:08:28 by gribovvladi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	unsigned int	i;
+	char			*rtn;
+
+	i = 0;
+	if (!s || (!s && !f))
+		return (ft_strdup(""));
+	else if (!f)
+		return (ft_strdup(s));
+	rtn = ft_strdup(s);
+	if (!rtn)
+		return (rtn = NULL);
+	while (s[i])
+	{
+		rtn[i] = (*f)(i, s[i]);
+		i++;
+	}
+	return (rtn);
 }
-// #include <stdio.h>
-
-// int	main()
-// {
-// 	char	c;
-
-// 	c = '1';
-// 	printf("%d", ft_isalpha(c));
-// 	return (0);
-// }

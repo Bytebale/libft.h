@@ -6,7 +6,7 @@
 /*   By: gribovvladimir <gribovvladimir@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:51:42 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/13 15:45:08 by gribovvladi      ###   ########.fr       */
+/*   Updated: 2021/10/14 23:59:10 by gribovvladi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	tmp[i] = '\0';
 	return (tmp);
 }
-#include <string.h>
-#include <stdio.h>
+// #include <string.h>
+// #include <stdio.h>
 
-int main()
-{
-	char const s[] = "sdfghjkl";
-	unsigned int start = 5;
+// int main()
+// {
+// 	char const s[] = "sdfghjkl";
+// 	unsigned int start = 5;
 
-	printf("%s\n", ft_substr(s, start, sizeof(s)));
-	return (0);
-}
+// 	printf("%s\n", ft_substr(s, start, sizeof(s)));
+// 	return (0);
+// }

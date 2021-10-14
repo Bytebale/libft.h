@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gribovvladimir <gribovvladimir@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 12:11:48 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/15 00:06:50 by gribovvladi      ###   ########.fr       */
+/*   Created: 2021/10/15 00:47:25 by gribovvladi       #+#    #+#             */
+/*   Updated: 2021/10/15 00:59:31 by gribovvladi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	write (fd, ft_itoa(n), (unsigned int) n);
 }
-// #include <stdio.h>
-
-// int	main()
-// {
-// 	char	c;
-
-// 	c = '1';
-// 	printf("%d", ft_isalpha(c));
-// 	return (0);
-// }
