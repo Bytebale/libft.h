@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:17:23 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/11 16:27:59 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/19 16:39:06 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*tmp;
 
 	tmp = malloc(size * count);
-	if (!tmp)
+	if (tmp == 0)
 		return (NULL);
-	ft_bzero(tmp, count);
+	ft_bzero(tmp, count * size);
 	return (tmp);
 }
 // #include <stdio.h>

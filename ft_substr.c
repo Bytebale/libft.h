@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gribovvladimir <gribovvladimir@student.    +#+  +:+       +#+        */
+/*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:51:42 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/14 23:59:10 by gribovvladi      ###   ########.fr       */
+/*   Updated: 2021/10/19 16:29:51 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,28 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*tmp;
 	size_t	i;
+	char	*str;
 
-	if (!s)
-		return (NULL);
-	if ((size_t)start > ft_strlen((char *) s))
-		return (ft_strdup(""));
-	tmp = malloc(sizeof(char) * (len + 1));
 	i = 0;
-	if (!tmp)
-		return (0);
-	while (i < len)
+	if (s == NULL)
+		return (NULL);
+	if (ft_strlen((char *) s) < start)
+		len = 0;
+	if (len > (ft_strlen((char *) s) - start))
+		str = (char *)malloc(sizeof(char)
+				* (ft_strlen((char *) s) - start + 1));
+	else
+		str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	while (i < len && s[start + i] != '\0')
 	{
-		tmp[i] = *(s + start + i);
+		str[i] = s[start + i];
 		i++;
 	}
-	tmp[i] = '\0';
-	return (tmp);
+	str[i] = '\0';
+	return (str);
 }
 // #include <string.h>
 // #include <stdio.h>

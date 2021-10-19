@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 01:58:41 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/05 16:21:01 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/18 16:23:35 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 
 	d = dest;
 	s = src;
+	if (!dest && !src)
+		return (0);
 	if (d < s)
 		while (len--)
 			*d++ = *s++;

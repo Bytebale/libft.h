@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gribovvladimir <gribovvladimir@student.    +#+  +:+       +#+         #
+#    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/15 00:54:11 by gribovvladi      ###   ########.fr        #
+#    Updated: 2021/10/18 16:00:46 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
