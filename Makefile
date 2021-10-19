@@ -6,7 +6,7 @@
 #    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/18 16:00:46 by lshonta          ###   ########.fr        #
+#    Updated: 2021/10/19 18:51:22 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,12 +46,23 @@ LIST := ft_isalpha.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
-		
+
+LIST_B := ft_lstnew.c\
+			ft_lstadd_front.c\
+			ft_lstsize.c\
+			ft_lstlast.c\
+			ft_lstadd_back.c\
+			ft_lstdelone.c\
+			ft_lstclear.c\
+			ft_lstiter.c\
+			ft_lstmap.c\
+
 FLAGS := -Wall -Werror -Wextra
 
 OBJ = $(patsubst %.c,%.o, $(LIST))
+OBJB = $(patsubst %.c,%.o, $(LIST_B))
 FILES = $(patsubst %.c,%.d,$(LIST))
-RM := @rm -f
+FILES_B = $(patsubst %.c,%.d,$(LIST_B))
 
 all: $(NAME)
 
@@ -62,11 +73,14 @@ $(NAME) : $(OBJ)
 	gcc $(FLAGS) -c $<
 
 clean:
-	$(RM) $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJB)
+	ar -rsc $(NAME) $(OBJB)
 
 .PHONY: all clean fclean re
