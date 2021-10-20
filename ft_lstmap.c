@@ -6,7 +6,7 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:49:53 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/19 18:50:35 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/20 18:20:43 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*save;
+	t_list	*new_lst;
+	t_list	*elem;
 
-	if (!lst || !f || !del)
-		return (0);
-	new_list = ft_lstnew(f(lst->content));
-	if (!new_list)
-		return (0);
-	save = new_list;
+	if (!lst || !f)
+		return (NULL);
+	elem = ft_lstnew(f(lst->content));
+	if (!(elem))
+	{
+		ft_lstclear(&lst, del);
+		return (NULL);
+	}
+	new_lst = elem;
 	lst = lst->next;
 	while (lst)
 	{
-		new_list->next = ft_lstnew(f(lst->content));
-		if (!new_list->next)
+		elem = ft_lstnew(f(lst->content));
+		if (!(elem))
 		{
-			ft_lstclear(&save, del);
-			return (0);
+			ft_lstclear(&lst, del);
+			ft_lstclear(&new_lst, del);
 		}
-		new_list = new_list->next;
 		lst = lst->next;
+		ft_lstadd_back(&new_lst, elem);
 	}
-	new_list->next = NULL;
-	return (save);
+	return (new_lst);
 }

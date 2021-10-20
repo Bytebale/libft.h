@@ -6,7 +6,7 @@
 #    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/19 18:51:22 by lshonta          ###   ########.fr        #
+#    Updated: 2021/10/20 18:23:29 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ $(NAME) : $(OBJ)
 	gcc $(FLAGS) -c $<
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(OBJB)
 
 fclean: clean
 	rm -f $(NAME)
