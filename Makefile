@@ -6,7 +6,7 @@
 #    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/20 18:23:29 by lshonta          ###   ########.fr        #
+#    Updated: 2021/10/21 16:36:52 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,15 +47,15 @@ LIST := ft_isalpha.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
 
-LIST_B := ft_lstnew.c\
-			ft_lstadd_front.c\
-			ft_lstsize.c\
-			ft_lstlast.c\
-			ft_lstadd_back.c\
-			ft_lstdelone.c\
-			ft_lstclear.c\
-			ft_lstiter.c\
-			ft_lstmap.c\
+LIST_B := ft_lstnew_bonus.c\
+			ft_lstadd_front_bonus.c\
+			ft_lstsize_bonus.c\
+			ft_lstlast_bonus.c\
+			ft_lstadd_back_bonus.c\
+			ft_lstdelone_bonus.c\
+			ft_lstclear_bonus.c\
+			ft_lstiter_bonus.c\
+			ft_lstmap_bonus.c\
 
 FLAGS := -Wall -Werror -Wextra
 
