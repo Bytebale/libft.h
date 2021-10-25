@@ -6,12 +6,12 @@
 #    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/22 18:31:18 by lshonta          ###   ########.fr        #
+#    Updated: 2021/10/25 12:51:15 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a 
-HEADER := -I libft.h
+HEADER := *.h
 LIST := ft_isalpha.c\
 		ft_isdigit.c\
 		ft_isalnum.c\
@@ -47,6 +47,7 @@ LIST := ft_isalpha.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
+		ft_putchar.c\
 
 LIST_B := ft_lstnew_bonus.c\
 			ft_lstadd_front_bonus.c\
@@ -62,13 +63,11 @@ FLAGS := -Wall -Werror -Wextra
 
 OBJ = $(patsubst %.c,%.o, $(LIST))
 OBJB = $(patsubst %.c,%.o, $(LIST_B))
-FILES = $(patsubst %.c,%.d,$(LIST))
-FILES_B = $(patsubst %.c,%.d,$(LIST_B))
 
 all: $(NAME)
 
-$(NAME) : $(OBJ)
-	 ar -rsc $(NAME) $?
+$(NAME) : $(HEADER) $(OBJ)
+	 ar -rc $(NAME)  $?
 
 %.o : %.c
 	gcc $(FLAGS) -c $<
@@ -82,6 +81,6 @@ fclean: clean
 re: fclean all
 
 bonus: $(OBJB)
-	ar -rsc $(NAME) $(OBJB)
+	ar -rsc $(NAME) $?
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
