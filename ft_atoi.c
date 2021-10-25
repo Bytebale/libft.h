@@ -6,13 +6,13 @@
 /*   By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:26:28 by lshonta           #+#    #+#             */
-/*   Updated: 2021/10/21 17:13:20 by lshonta          ###   ########.fr       */
+/*   Updated: 2021/10/21 18:34:59 by lshonta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_ispace(const char *str)		/* проверяем пробелы, переносы строк, табуляцию*/
+static char	*ft_ispace(const char *str)
 {
 	while (((*str == ' ') || (*str == '\t') || (*str == '\n')
 			|| (*str == '\v') || (*str == '\f') || (*str == '\r')))
@@ -20,7 +20,7 @@ static char	*ft_ispace(const char *str)		/* проверяем пробелы, �
 	return ((char *)str);
 }
 
-int	ft_atoi(const char *str)					/* функция принимает строку символов и преводит ее к типу int определяя при этом знак (+/-) */
+int	ft_atoi(const char *str)
 {
 	int			sign;
 	long int	n;
@@ -28,21 +28,21 @@ int	ft_atoi(const char *str)					/* функция принимает строк
 
 	n = 0;
 	sign = 1;
-	str = ft_ispace(str);						/* пропускаем  пробелы в строке */
-	if (*str == '-')							/* определяем знак*/
+	str = ft_ispace(str);
+	if (*str == '-')
 	{
 		sign = -1;
 		str++;
 	}
-	else if (*str == '+')		
+	else if (*str == '+')
 		str++;
-	while (*str >= '0' && *str <= '9')			/* вывод цифр */
+	while (*str >= '0' && *str <= '9')
 	{
 		tmp = n;
 		n = n * 10 + sign * (*str - '0');
-		if (sign == 1 && tmp > n)				/* если больше INT_MAX вывод  INT_MAX*/
+		if (sign == 1 && tmp > n)
 			return (-1);
-		else if (sign == -1 && tmp < n)			/* если меньше INT_MIN вывод  INT_MIN*/
+		else if (sign == -1 && tmp < n)
 			return (0);
 		str++;
 	}
@@ -52,8 +52,8 @@ int	ft_atoi(const char *str)					/* функция принимает строк
 
 // int main()
 // {
-// 	char str[] = "-13489298374";
+// 	char str[] = "-123";
 // 	printf("my: %d\n", ft_atoi(str));
-// 	printf("CC: %d\n", atoi(str));
+// 	printf("orig: %d\n", atoi(str));
 // 	return (0);
 // }

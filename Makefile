@@ -6,11 +6,12 @@
 #    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/21 16:36:52 by lshonta          ###   ########.fr        #
+#    Updated: 2021/10/22 18:31:18 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a 
+HEADER := -I libft.h
 LIST := ft_isalpha.c\
 		ft_isdigit.c\
 		ft_isalnum.c\
