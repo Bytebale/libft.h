@@ -6,7 +6,7 @@
 #    By: lshonta <lshonta@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 13:53:04 by lshonta           #+#    #+#              #
-#    Updated: 2021/10/25 12:51:15 by lshonta          ###   ########.fr        #
+#    Updated: 2021/11/09 14:41:32 by lshonta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,10 @@ LIST := ft_isalpha.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
 		ft_putchar.c\
+		ft_baselen.c\
+		ft_intlen.c\
+		ft_baseitoa.c\
+		ft_baseitoa_up.c\
 
 LIST_B := ft_lstnew_bonus.c\
 			ft_lstadd_front_bonus.c\
